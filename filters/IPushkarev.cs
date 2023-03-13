@@ -90,6 +90,24 @@ namespace filters
             }
             return true;
         }
+        public bool KernelWhiteHat(Bitmap Img, int x, int y)
+        {
+
+            int sizex = Img.Width;
+            int sizey = Img.Height;
+            double sum = 0;
+            for (int i = x; i < x + kx; i++)
+            {
+                for (int j = y; j < y + ky; j++)
+                {
+                    if ((i < sizex) && (j < sizey))
+                    {
+                        if (Img.GetPixel(i, j).R == kernel[i - x, j - y]) sum+=1;
+                    }
+                }
+            }
+            if (sum > kx*ky/2) return true; return false;
+        }
 
 
     }
@@ -123,4 +141,19 @@ namespace filters
             return ResColor;
         }
     }
+    public class WhiteHatFilter : MorphologyFilters
+    {
+        public WhiteHatFilter(int[,] ker, int size)
+        {
+            setkernel(ker, size);
+        }
+
+        protected override Color MakeNewColor(Bitmap Img, int x, int y)
+        {
+            Color ResColor = Color.FromArgb(0, 0, 0);
+            if (KernelWhiteHat(Img, x, y)) ResColor = Color.FromArgb(255, 255, 255);
+            return ResColor;
+        }
+    }
+
 }

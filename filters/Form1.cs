@@ -5,8 +5,10 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace filters
 {
@@ -176,6 +178,8 @@ namespace filters
         {
             filters filter = new ErosionFilter(ker(), trackBar1.Value);
             backgroundWorker1.RunWorkerAsync(filter);
+
+
         }
 
         private void dilationToolStripMenuItem_Click(object sender, EventArgs e)
@@ -281,6 +285,65 @@ namespace filters
             filters filter = new GlassFilter();
             backgroundWorker1.RunWorkerAsync(filter);
             
+        }
+
+        private void топологияToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+
+        private void dilationfunc(object sender, EventArgs e)
+        {
+            filters filter = new DilationFilter(ker(), 0);
+        }
+        private async void someMethod()
+        {
+            await Task.Delay(8000);
+        }
+        private async void openingToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+            filters filter = new ErosionFilter(ker(), trackBar1.Value);
+            backgroundWorker1.RunWorkerAsync(filter);
+            
+            BackgroundWorker worker2 = new BackgroundWorker();
+            await Task.Delay(8000);
+            filter = new DilationFilter(ker(), trackBar1.Value);
+            someMethod();
+            worker2.RunWorkerAsync(filter);
+
+            
+
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+ 
+        }
+
+        private async void closingToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            filters filter = new DilationFilter(ker(), trackBar1.Value);
+            backgroundWorker1.RunWorkerAsync(filter);
+            
+            BackgroundWorker worker2 = new BackgroundWorker();
+            await Task.Delay(8000);
+            filter = new ErosionFilter(ker(), trackBar1.Value);
+            worker2.RunWorkerAsync(filter);
+        }
+
+        private async void whiteHatToolStripMenuItem_Click(object sender, EventArgs e)
+        {   
+            filters filter = new ErosionFilter(ker(), trackBar1.Value);
+            backgroundWorker1.RunWorkerAsync(filter);
+
+            BackgroundWorker worker2 = new BackgroundWorker();
+            await Task.Delay(8000);
+            filter = new DilationFilter(ker(), trackBar1.Value);
+            someMethod();
+            worker2.RunWorkerAsync(filter);
+            await Task.Delay(8000);
         }
     }
 

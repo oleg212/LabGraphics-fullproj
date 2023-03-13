@@ -47,6 +47,7 @@ namespace filters
             this.идеальныйОтражательToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.искажениеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.волныToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.стеклоToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.топологияToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.binaryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dilationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -86,7 +87,7 @@ namespace filters
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.trackBar1 = new System.Windows.Forms.TrackBar();
-            this.стеклоToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.whiteHatToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
@@ -235,9 +236,16 @@ namespace filters
             // волныToolStripMenuItem
             // 
             this.волныToolStripMenuItem.Name = "волныToolStripMenuItem";
-            this.волныToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.волныToolStripMenuItem.Size = new System.Drawing.Size(113, 22);
             this.волныToolStripMenuItem.Text = "Волны";
             this.волныToolStripMenuItem.Click += new System.EventHandler(this.волныToolStripMenuItem_Click);
+            // 
+            // стеклоToolStripMenuItem
+            // 
+            this.стеклоToolStripMenuItem.Name = "стеклоToolStripMenuItem";
+            this.стеклоToolStripMenuItem.Size = new System.Drawing.Size(113, 22);
+            this.стеклоToolStripMenuItem.Text = "Стекло";
+            this.стеклоToolStripMenuItem.Click += new System.EventHandler(this.стеклоToolStripMenuItem_Click);
             // 
             // топологияToolStripMenuItem
             // 
@@ -247,48 +255,52 @@ namespace filters
             this.erosionToolStripMenuItem,
             this.openingToolStripMenuItem,
             this.closingToolStripMenuItem,
-            this.setMorphologyToolStripMenuItem});
+            this.setMorphologyToolStripMenuItem,
+            this.whiteHatToolStripMenuItem});
             this.топологияToolStripMenuItem.Name = "топологияToolStripMenuItem";
-            this.топологияToolStripMenuItem.Size = new System.Drawing.Size(78, 20);
-            this.топологияToolStripMenuItem.Text = "Топология";
+            this.топологияToolStripMenuItem.Size = new System.Drawing.Size(92, 20);
+            this.топологияToolStripMenuItem.Text = "Морфология";
+            this.топологияToolStripMenuItem.Click += new System.EventHandler(this.топологияToolStripMenuItem_Click);
             // 
             // binaryToolStripMenuItem
             // 
             this.binaryToolStripMenuItem.Name = "binaryToolStripMenuItem";
-            this.binaryToolStripMenuItem.Size = new System.Drawing.Size(158, 22);
+            this.binaryToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.binaryToolStripMenuItem.Text = "binary";
             this.binaryToolStripMenuItem.Click += new System.EventHandler(this.binaryToolStripMenuItem_Click);
             // 
             // dilationToolStripMenuItem
             // 
             this.dilationToolStripMenuItem.Name = "dilationToolStripMenuItem";
-            this.dilationToolStripMenuItem.Size = new System.Drawing.Size(158, 22);
+            this.dilationToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.dilationToolStripMenuItem.Text = "dilation";
             this.dilationToolStripMenuItem.Click += new System.EventHandler(this.dilationToolStripMenuItem_Click);
             // 
             // erosionToolStripMenuItem
             // 
             this.erosionToolStripMenuItem.Name = "erosionToolStripMenuItem";
-            this.erosionToolStripMenuItem.Size = new System.Drawing.Size(158, 22);
+            this.erosionToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.erosionToolStripMenuItem.Text = "erosion";
             this.erosionToolStripMenuItem.Click += new System.EventHandler(this.erosionToolStripMenuItem_Click);
             // 
             // openingToolStripMenuItem
             // 
             this.openingToolStripMenuItem.Name = "openingToolStripMenuItem";
-            this.openingToolStripMenuItem.Size = new System.Drawing.Size(158, 22);
+            this.openingToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.openingToolStripMenuItem.Text = "opening";
+            this.openingToolStripMenuItem.Click += new System.EventHandler(this.openingToolStripMenuItem_Click);
             // 
             // closingToolStripMenuItem
             // 
             this.closingToolStripMenuItem.Name = "closingToolStripMenuItem";
-            this.closingToolStripMenuItem.Size = new System.Drawing.Size(158, 22);
+            this.closingToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.closingToolStripMenuItem.Text = "closing";
+            this.closingToolStripMenuItem.Click += new System.EventHandler(this.closingToolStripMenuItem_Click);
             // 
             // setMorphologyToolStripMenuItem
             // 
             this.setMorphologyToolStripMenuItem.Name = "setMorphologyToolStripMenuItem";
-            this.setMorphologyToolStripMenuItem.Size = new System.Drawing.Size(158, 22);
+            this.setMorphologyToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.setMorphologyToolStripMenuItem.Text = "set morphology";
             this.setMorphologyToolStripMenuItem.Click += new System.EventHandler(this.setMorphologyToolStripMenuItem_Click);
             // 
@@ -583,12 +595,12 @@ namespace filters
             this.trackBar1.TabIndex = 68;
             this.trackBar1.Value = 2;
             // 
-            // стеклоToolStripMenuItem
+            // whiteHatToolStripMenuItem
             // 
-            this.стеклоToolStripMenuItem.Name = "стеклоToolStripMenuItem";
-            this.стеклоToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.стеклоToolStripMenuItem.Text = "Стекло";
-            this.стеклоToolStripMenuItem.Click += new System.EventHandler(this.стеклоToolStripMenuItem_Click);
+            this.whiteHatToolStripMenuItem.Name = "whiteHatToolStripMenuItem";
+            this.whiteHatToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.whiteHatToolStripMenuItem.Text = "WhiteHat";
+            this.whiteHatToolStripMenuItem.Click += new System.EventHandler(this.whiteHatToolStripMenuItem_Click);
             // 
             // Form1
             // 
@@ -630,6 +642,7 @@ namespace filters
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -699,6 +712,7 @@ namespace filters
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.TrackBar trackBar1;
         private System.Windows.Forms.ToolStripMenuItem стеклоToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem whiteHatToolStripMenuItem;
     }
 }
 
